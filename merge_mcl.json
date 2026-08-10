@@ -1,0 +1,18 @@
+{
+    "patch_dir": "./atlas_mcl",
+    "patch_prefix": "atlas_mcl_p",
+    "patch_suffix": ".png",
+    
+    "base_dir": "./merged_pmp_wqy",
+    "base_prefix": "atlas_wqy9_p",
+    "base_suffix": ".png",
+    
+    "output_dir": "./merged_mcl_pmp_wqy",
+    
+    "deny_area": [
+        "0x0000-0x001F",
+        "0x007F-0x009F",
+
+        "0x0500-0xFFFF"
+    ]
+}

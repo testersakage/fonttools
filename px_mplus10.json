@@ -1,0 +1,17 @@
+{
+    "config": "",
+    "load_path": "E:/Fonts/PixelMplus10-Regular.ttf",
+    "prefix": "unicode_page",
+    "save_dir": "./output_pixelmplus10",
+    "pt": 10.0,
+    "dpi": 72.0,
+    "grid_w": 16,
+    "grid_h": 16,
+    "width": 12,
+    "height": 12,
+    "upscale": 1,
+    "smooth": "off",
+    "threshold": 127,
+    "page": "16x16",
+    "color": "w"
+}
