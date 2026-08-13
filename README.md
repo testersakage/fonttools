@@ -73,9 +73,37 @@ python atlas_merge.py -config="merge_mcl.json"
 
 ※出力設定は merge_mcl.json で変更可能です。
 ------------------------------
-## 4. mcl_sign_to_atlas.py
+## 4. mcl_sign_to_atlas.py (mcl_signsからのアトラス生成)
+Minecloniaの看板フォントの個別画像群を、12px仕様のアトラス画像へ一括変換・統合します。
+
+## 📋 事前準備
+1. Luantiのゲームディレクトリ（`games/mineclonia/mods/ITEMS/mcl_signs/` など）を開きます。
+2. その中にある `textures/` フォルダを、本ツールのフォルダ（`fonttool/` 直下）に丸ごとコピーして配置してください。
+
+## 💻 実行コマンド
+
+```bash
+python mcl_sign_to_atlas.py
+```
+
 ------------------------------
-## 5. build_atlas_tsvs.py
+## 5. build_atlas_tsvs.py (フォントマトリクスTSVの自動生成)
+生成された `.png.txt`（フォント情報ファイル）群を一括スキャンし、メインフォントに「実在する文字」と「ページ番号」を記録した統合マトリクスTSVファイル（`unicode_main.tsv` 等）を自動ビルドします。
+看板MOD側はこのリストを参照し、登録されていない文字（歯抜け部分）を自動的にサブアトラス（フォールバック先）へピンポイントで丸投げします。
+
+## 📋 事前準備
+1. `pmp_to_12px.py` などを使用し、あらかじめメインとなるアトラス画像群を生成しておきます。
+2. 生成された出力フォルダの名前（例: `output_pixelmplus10`）と、出力されたアトラスのファイル名規則（例: `unicode_main%02x.png`）を確認します。
+
+## 💻 実行コマンド
+
+```bash
+python build_atlas_tsvs.py <対象のフォルダ名> -name="<ファイル名規則>"
+```
+*💡 実行例：`python build_atlas_tsvs.py output_pixelmplus10 -name="unicode_main%02x.png"`*
+
+※処理完了後、生成された `.tsv` ファイルの名前を設定に合わせてリネームし、`mod_mcl_signs/` の `init.lua` と同じ階層へ配置してください。
+
 ------------------------------
 ## 💻 動作環境
 

@@ -64,15 +64,43 @@ python atlas_merge.py -config="merge_pmp.json"
 1. Run `mcl_sign_to_atlas.py` on the "Standalone MCL Signs Mod" side to generate the baseline font atlases.
 2. Copy the resulting output directory and paste it directly into this utility's folder (`fonttool/` root).
 3. Execute the following command:
+
 ```bash
 python atlas_merge.py -config="merge_mcl.json"
 ```
 *※Output configurations can be adjusted inside `merge_mcl.json`.*
 
 ------------------------------
-## 4. mcl_sign_to_atlas.py
+## 4. mcl_sign_to_atlas.py (Atlas Generation from mcl_signs)
+Converts and solidifies the discrete signboard font images from Mineclonia into a single set of 12px font atlas textures.
+
+## 📋 Prerequisites
+1. Navigate to your Luanti game directory (e.g., `games/mineclonia/mods/ITEMS/mcl_signs/`).
+2. Copy the entire `textures/` directory and paste it directly into this utility's folder (`fonttool/` root).
+
+## 💻 Execution Command
+
+```bash
+python mcl_sign_to_atlas.py
+```
+
 ------------------------------
-## 5. build_atlas_tsvs.py
+## 5. build_atlas_tsvs.py (Font Matrix TSV Code-point Builder)
+Scans all generated `.png.txt` font description files to automatically build a unified matrix TSV file (e.g., `unicode_main.tsv`) that registers all "existing characters" and their respective page numbers.
+The signboard mod references this list during runtime; any character not registered in this matrix (missing/blank glyphs) is dynamically routed to the secondary fallback sub-atlas.
+
+## 📋 Prerequisites
+1. Generate your primary font atlas beforehand using `pmp_to_12px.py` or a similar script.
+2. Note the exact name of the generated output directory (e.g., `output_pixelmplus10`) and its atlas file naming convention (e.g., `unicode_main%02x.png`).
+
+## 💻 Execution Command
+```bash
+python build_atlas_tsvs.py <folder_name> -name="<filename_pattern>"
+```
+*💡 Example:* `python build_atlas_tsvs.py output_pixelmplus10 -name="unicode_main%02x.png"`
+
+*Note: Once the process is complete, rename the resulting `.tsv` file to match your mod configurations, and place it directly inside the `mod_mcl_signs/` directory alongside `init.lua`.*
+
 ------------------------------
 ## 💻 Requirements
 
