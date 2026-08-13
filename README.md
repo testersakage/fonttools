@@ -9,6 +9,8 @@ Luanti（旧Minetest）のカスタムフォント開発における、フォン
 * **bdf_to_12px.py**: wenquanyi_9pt.bdf から12px等幅仕様の完璧なアトラス画像を自動生成します（ベースライン補正ロジック内蔵）。
 * **pmp_to_12px.py**: PixelMplus10-Regular.ttf から12px等幅アトラス画像を自動生成します。
 * **atlas_merge.py**: 2つの異なるフォントアトラスを1つに高精度で自動合成（マージ）します。
+* **mcl_sign_to_atlas.py**: Minecloniaの看板用フォントをアトラス画像に変換します。
+* **build_atlas_tsvs.py**: アトラス生成時に出力されるテキストからtsv形式のフォントリストを作成します。
 
 ------------------------------
 ## 🛠️ 導入方法
@@ -70,6 +72,10 @@ python atlas_merge.py -config="merge_mcl.json"
 ```
 
 ※出力設定は merge_mcl.json で変更可能です。
+------------------------------
+## 4. mcl_sign_to_atlas.py
+------------------------------
+## 5. build_atlas_tsvs.py
 ------------------------------
 ## 💻 動作環境
 

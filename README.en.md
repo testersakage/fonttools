@@ -10,6 +10,8 @@ A standalone collection of Python utility scripts designed to automate the gener
 * **`bdf_to_12px.py`**: Automatically generates perfect 12px monospaced font atlas images from `wenquanyi_9pt.bdf` (features built-in mathematical baseline alignment correction).
 * **`pmp_to_12px.py`**: Automatically generates 12px monospaced font atlas images from `PixelMplus10-Regular.ttf`.
 * **`atlas_merge.py`**: Merges two different font atlases into a single, high-precision combined atlas image.
+* **`mcl_sign_to_atlas.py`**: Converts Mineclonia sign fonts into an atlas image.
+* **`build_atlas_tsvs.py`**: Creates a font list in TSV format from the text output during atlas generation.
 
 ------------------------------
 ## 🛠️ Installation
@@ -67,6 +69,10 @@ python atlas_merge.py -config="merge_mcl.json"
 ```
 *※Output configurations can be adjusted inside `merge_mcl.json`.*
 
+------------------------------
+## 4. mcl_sign_to_atlas.py
+------------------------------
+## 5. build_atlas_tsvs.py
 ------------------------------
 ## 💻 Requirements
 
