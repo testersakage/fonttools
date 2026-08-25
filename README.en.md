@@ -102,6 +102,23 @@ python build_atlas_tsvs.py <folder_name> -name="<filename_pattern>"
 *Note: Once the process is complete, rename the resulting `.tsv` file to match your mod configurations, and place it directly inside the `mod_mcl_signs/` directory alongside `init.lua`.*
 
 ------------------------------
+## 6. unifont_to_atlas.py (Convert Unifont Chart Images to Font Atlases)
+Converts a single Unifont Chart image obtained from [Unifoudry.com](https://unifoundry.com) into 256 individual page atlas images formatted in a 16x16 grid structure. 
+By replacing the vanilla textures (`textures/unifont/signs_lib_uni<page>.png`) found inside the [signs_lib mod](https://content.luanti.org/packages/mt-mods/signs_lib/) with the generated localized Japanese chart pages, you can completely eliminate CJK Han unification display issues (commonly known as the default Chinese font bug).
+
+## Prerequisites
+1. Place a copy of your source `unifont_jp-<version>.png` image inside the same directory as `unifont_to_atlas.py`.
+2. Confirm the exact input filename and your desired naming convention pattern for the output files.
+3. Configure the foreground (text) and background color mappings during conversion. If the source image features white text on a black background, you must append the `--invert` option flag.
+
+## Execution Command
+
+```bash
+python unifont_to_atlas.py <source_filename>.png --invert -n "<output_prefix><page>.png"
+```
+*Example: `python unifont_to_atlas.py unifont_jp-17.0.05.png --invert -n "signs_lib_uni<page>.png"`*
+
+------------------------------
 ## 💻 Requirements
 
 * Python 3.x

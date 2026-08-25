@@ -104,6 +104,26 @@ python build_atlas_tsvs.py <対象のフォルダ名> -name="<ファイル名規
 
 ※処理完了後、生成された `.tsv` ファイルの名前を設定に合わせてリネームし、`mod_mcl_signs/` の `init.lua` と同じ階層へ配置してください。
 
+
+
+
+------------------------------
+## 6. unifont_to_atlas.py (UnifontのChart画像をアトラスに変換)
+[Unifoudry.com](https://unifoundry.com)にあるChat画像を16列16行256枚のアトラス画像に変換します。
+[signs_lib mod](https://content.luanti.org/packages/mt-mods/signs_lib/) に同梱されているtextures/unifont/signs_lib_uni**.pngを日本語Chartに差し替えることで中華フォント問題を解消します。
+
+## 📋 事前準備
+1. 変換元となる`unifont_jp-<バージョン番号>.png` のコピーをunifont_to_atlas.pyと同じフォルダに置きます。
+2. 変換元のファイル名と変換後の命名規則を確認します。
+3. 変換の際に文字と背景の指定をします。黒地に白文字の場合は`--invert`オプションを付けてください。
+
+## 💻 実行コマンド
+
+```bash
+python unifont_to_atlas.py <変換元ファイル名>.png --invert -n "<ファイル名><page>.png"
+```
+*💡 実行例：`python unifont_to_atlas.py unifont_jp-17.0.05.png --invert -n "signs_lib_uni<page>.png"`*
+
 ------------------------------
 ## 💻 動作環境
 
