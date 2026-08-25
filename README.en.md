@@ -12,6 +12,7 @@ A standalone collection of Python utility scripts designed to automate the gener
 * **`atlas_merge.py`**: Merges two different font atlases into a single, high-precision combined atlas image.
 * **`mcl_sign_to_atlas.py`**: Converts Mineclonia sign fonts into an atlas image.
 * **`build_atlas_tsvs.py`**: Creates a font list in TSV format from the text output during atlas generation.
+* **`unifont_to_atlas.py`**: GNU UnifontのChart画像を16列16行256枚のアトラス画像に変換します。
 
 ------------------------------
 ## 🛠️ Installation

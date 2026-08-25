@@ -11,6 +11,7 @@ Luanti（旧Minetest）のカスタムフォント開発における、フォン
 * **atlas_merge.py**: 2つの異なるフォントアトラスを1つに高精度で自動合成（マージ）します。
 * **mcl_sign_to_atlas.py**: Minecloniaの看板用フォントをアトラス画像に変換します。
 * **build_atlas_tsvs.py**: アトラス生成時に出力されるテキストからtsv形式のフォントリストを作成します。
+* **unifont_to_atlas.py**: GNU UnifontのChart画像を16列16行256枚のアトラス画像に変換します。
 
 ------------------------------
 ## 🛠️ 導入方法
